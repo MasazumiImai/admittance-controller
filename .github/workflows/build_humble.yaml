@@ -1,0 +1,24 @@
+name: ROS 2 Humble build workflow
+
+on:
+  pull_request:
+    branches:
+      - main
+      - develop
+
+  # Allows you to run this workflow manually from the Actions tab
+  workflow_dispatch:
+
+jobs:
+  industrial_ci:
+    strategy:
+      matrix:
+        env:
+          # Load setup.bash because the test depends on the packages in workspace.
+          # Ref: https://github.com/ros-industrial/industrial_ci/issues/585
+          - { ROS_DISTRO: humble, ROS_REPO: ros, BEFORE_RUN_TARGET_TEST_EMBED: "ici_with_unset_variables source /root/target_ws/install/setup.bash" }
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - uses: "ros-industrial/industrial_ci@master"
+        env: ${{ matrix.env }}

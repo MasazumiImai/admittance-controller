@@ -1,0 +1,8 @@
+# ROS 2 related
+build/*
+install/*
+log/*
+__pycache__/
+
+# rosbag related
+!rosbag.bash

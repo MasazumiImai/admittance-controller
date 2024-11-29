@@ -1,0 +1,33 @@
+{
+  "C_Cpp.clang_format_path": "",
+  "C_Cpp.clang_format_style": "file:${workspaceFolder}/.clang-format/.clang-format",
+  "[cpp]": {
+    "editor.defaultFormatter": "ms-vscode.cpptools"
+  },
+  "editor.formatOnSave": true,
+  "editor.tabSize": 2,
+  "editor.renderWhitespace": "all",
+  "editor.trimAutoWhitespace": true,
+  "files.insertFinalNewline": true,
+  "files.trimTrailingWhitespace": true,
+  "[markdown]": {
+    "files.trimTrailingWhitespace": false
+  },
+  "python.autoComplete.extraPaths": [
+    "/opt/ros/humble/lib/python3.10/site-packages",
+    "/opt/ros/humble/local/lib/python3.10/dist-packages"
+  ],
+  "python.analysis.extraPaths": [
+    "/opt/ros/humble/lib/python3.10/site-packages",
+    "/opt/ros/humble/local/lib/python3.10/dist-packages"
+  ],
+  "cSpell.words": [
+    "colcon",
+    "DISTRO",
+    "Eigen",
+    "pycache",
+    "rosbag",
+    "Tohoku",
+    "uncrustify"
+  ]
+}
