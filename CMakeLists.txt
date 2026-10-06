@@ -13,7 +13,7 @@ find_package(ament_cmake REQUIRED)
 find_package(eigen3_cmake_module REQUIRED)
 find_package(Eigen3 REQUIRED)
 
-add_library(${PROJECT_NAME} SHARED src/admittance.cpp)
+add_library(${PROJECT_NAME} SHARED src/admittance_control.cpp)
 target_compile_features(${PROJECT_NAME} PUBLIC cxx_std_17)
 target_include_directories(${PROJECT_NAME} PUBLIC
   $<BUILD_INTERFACE:${CMAKE_CURRENT_SOURCE_DIR}/include>
@@ -34,8 +34,8 @@ ament_export_dependencies(eigen3_cmake_module Eigen3)
 
 if(BUILD_TESTING)
   find_package(ament_cmake_gtest REQUIRED)
-  ament_add_gtest(test_admittance test/test_admittance.cpp)
-  target_link_libraries(test_admittance ${PROJECT_NAME})
+  ament_add_gtest(test_admittance_control test/test_admittance_control.cpp)
+  target_link_libraries(test_admittance_control ${PROJECT_NAME})
 endif()
 
 ament_package()
