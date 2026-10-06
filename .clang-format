@@ -1,0 +1,62 @@
+---
+# Modified from the ROS 2 Humble ament_clang_format configuration.
+# Use clang-format 22 or newer for reproducible output.
+Language: Cpp
+
+BasedOnStyle: Google
+
+AccessModifierOffset: -2
+
+AlignAfterOpenBracket: AlwaysBreak
+
+AlignOperands: DontAlign
+
+AlignTrailingComments: false
+
+AllowShortFunctionsOnASingleLine: InlineOnly
+
+AllowShortIfStatementsOnASingleLine: AllIfsAndElse
+
+BraceWrapping:
+  AfterClass: true
+  AfterControlStatement: Never
+  AfterFunction: true
+  AfterNamespace: true
+  AfterStruct: true
+BreakBeforeBraces: Custom
+
+BreakConstructorInitializers: BeforeColon
+
+ColumnLimit: 100
+
+ConstructorInitializerIndentWidth: 0
+
+ContinuationIndentWidth: 2
+
+DerivePointerAlignment: false
+PointerAlignment: Middle
+
+ReflowComments: false
+
+UseTab: Never
+
+IncludeBlocks: Regroup
+IncludeCategories:
+  - Regex: '.*\.hpp'
+    Priority: 4
+    CaseSensitive: true
+  - Regex: <[a-z_]*>
+    Priority: 1
+    CaseSensitive: true
+  - Regex: <.*Eigen.*>
+    Priority: 1
+    CaseSensitive: true
+  - Regex: <.*\.h>
+    Priority: 0
+    CaseSensitive: true
+  - Regex: '".*"'
+    Priority: 3
+    CaseSensitive: true
+  - Regex: <.*>
+    Priority: 2
+    CaseSensitive: true
